@@ -13,7 +13,7 @@ const CardList = ({ category }) => {
     const pageSize = useSelector(getPageSize)
     const status = useSelector(getStatus)
     const posts = useSelector(getPost)
-    console.log("postss=>", posts)
+    // console.log("postss=>", posts)
     // console.log("status=>", status)
 
     const dispatch = useDispatch()

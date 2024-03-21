@@ -40,7 +40,7 @@ export async function POST(req, res) {
 
         return NextResponse.json({ message: "Blog created successfully", result: data }, { status: 200 })
     } catch (err) {
-        console.log("err=>", err)
+        // console.log("err=>", err)
         return NextResponse.json({ Message: "Blog failed to create" }, { status: 500 })
     }
 }
@@ -79,7 +79,7 @@ export async function GET(req, res) {
 
         return NextResponse.json({ message: "Posts retrieved successfully", result: { posts, totalPosts } }, { status: 200 });
     } catch (err) {
-        console.log(err);
+        // console.log(err);
         return NextResponse.json({ message: "Something went wrong!" }, { status: 500 });
     }
 }

@@ -61,7 +61,7 @@ export default function Page() {
                 // }    
             } catch (err) {
                 setLoading(false)
-                console.log(err)
+                // console.log(err)
             }
         } else {
             setLoading(false)

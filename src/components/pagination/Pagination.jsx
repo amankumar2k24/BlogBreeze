@@ -8,30 +8,30 @@ const Pagination = () => {
     let page = useSelector(getPage);
     let pageSize = useSelector(getPageSize);
     let TotalPost = useSelector(getTotalPost);
-    console.log(page, pageSize, TotalPost)
+    // console.log(page, pageSize, TotalPost)
 
     const prev = () => {
-        console.log("clicked previous")
+        // console.log("clicked previous")
         if (page > 1) {
             page = page - 1
         } else {
             page = page
         }
         const pagination = { page: page, pageSize: pageSize }
-        console.log("pagination coming from PREV Paginaiton Component", pagination)
+        // console.log("pagination coming from PREV Paginaiton Component", pagination)
 
         dispatch(fetchPostsAsync({ pagination }))
     }
 
     const next = () => {
-        console.log("clicked next")
+        // console.log("clicked next")
         if (page < Math.ceil(TotalPost / pageSize)) {
             page = page + 1
         } else {
             page = page
         }
         const pagination = { page: page, pageSize: pageSize }
-        console.log("pagination coming from NEXT Paginaiton Component", pagination)
+        // console.log("pagination coming from NEXT Paginaiton Component", pagination)
 
         dispatch(fetchPostsAsync({ pagination }))
     }
