@@ -1,4 +1,5 @@
 const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
+import { BASE_API_URL } from "@/utils/constants";
 import axios from "axios";
 
 const postSlice = createSlice({
@@ -87,7 +88,7 @@ export const fetchPostsAsync = createAsyncThunk("post/fetchPosts", async ({ pagi
     }
 
     try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/posts?${queryString}`);
+        const res = await axios.get(`${BASE_API_URL}/api/posts?${queryString}`);
         // console.log("res fetchPosts Async=>", res)
         return res.data.result;
     } catch (err) {
@@ -99,7 +100,7 @@ export const fetchPostsAsync = createAsyncThunk("post/fetchPosts", async ({ pagi
 // For fetching the post by using id 
 export const fetchPostAsync = createAsyncThunk("post/fetchPost", async (id) => {
     try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/posts/${id}`, { cache: "no-store" })
+        const response = await axios.get(`${BASE_API_URL}/api/posts/${id}`, { cache: "no-store" })
         // console.log("response coming from fetchPostAsync", response)
         return response.data.result
     } catch (err) {
@@ -110,7 +111,7 @@ export const fetchPostAsync = createAsyncThunk("post/fetchPost", async (id) => {
 // For fetching the popular post 
 export const fetchPopularPostAsync = createAsyncThunk("post/fetchPopularPost", async () => {
     try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/popular-post`);
+        const response = await axios.get(`${BASE_API_URL}/api/popular-post`);
         // console.log("response coming from fetchPopularPostAsync=> ", response)
         return response?.data?.result
     } catch (err) {
@@ -121,7 +122,7 @@ export const fetchPopularPostAsync = createAsyncThunk("post/fetchPopularPost", a
 //For fetching the post by comment 
 export const postCommentAsync = createAsyncThunk("post/postCommentAsync", async ({ updatedObject, toast }, { rejectWithValue }) => {
     try {
-        const response = await axios.patch(`${process.env.NEXT_PUBLIC_API_URL}/api/comment`, updatedObject, {
+        const response = await axios.patch(`${BASE_API_URL}/api/comment`, updatedObject, {
             headers: { 'content-type': 'application/json' },
         });
         // console.log("response postCommentAsync=> ", response)

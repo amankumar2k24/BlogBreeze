@@ -1,3 +1,4 @@
+import { BASE_API_URL } from "@/utils/constants";
 import axios from "axios";
 
 const { createAsyncThunk, createSlice } = require("@reduxjs/toolkit");
@@ -31,7 +32,7 @@ export const PostBlogData = createAsyncThunk("blog/PostBlogData", async ({ formD
         let config = {
             headers: { "content-type": "multipart/form-data" }
         }
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/posts`, formData, config)
+        const response = await axios.post(`${BASE_API_URL}/api/posts`, formData, config)
         // console.log("response coming from PostBlogData === >>", response.data.result)
         if (response.status === 200) {
             setLoading(false)
