@@ -22,7 +22,7 @@ const SinglePage = ({ params }) => {
 
     useEffect(() => {
         dispatch(fetchPostAsync(slug))
-    }, [dispatch])
+    }, [dispatch, slug])
 
 
     return (

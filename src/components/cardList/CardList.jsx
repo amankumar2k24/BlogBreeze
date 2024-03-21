@@ -24,7 +24,7 @@ const CardList = ({ category }) => {
             pageSize: pageSize
         }
         dispatch(fetchPostsAsync(pagination, category))
-    }, [dispatch, category])
+    }, [dispatch, category, page, pageSize])
 
     return (
         <div className={styles.container}>

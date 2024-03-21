@@ -34,7 +34,7 @@ export default function Page() {
         if (status === "unauthenticated") {
             router.push("/");
         }
-    }, []);
+    }, [status, router]);
 
     const handleUpload = async (e) => {
         setLoading(true)
