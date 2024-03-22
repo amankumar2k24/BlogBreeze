@@ -6,8 +6,9 @@ import MenuCategories from '../menuCategories/MenuCategories'
 const Menu = () => {
     return (
         <div className={styles.container}>
-            {/* ==>first para<== */}
-            <h2 className={styles.subtitle}>Whats Hot</h2>
+           <div className={styles.boxContainer}>
+             {/* ==>first para<== */}
+             <h2 className={styles.subtitle}>Whats Hot</h2>
             <h1 className={styles.title}>Most popular</h1>
             <MenuPosts withImage={false} />
 
@@ -20,6 +21,7 @@ const Menu = () => {
             <h2 className={styles.subtitle}>Latest Blogs</h2>
             <h1 className={styles.title}>Creator of Blog</h1>
             <MenuPosts withImage={true} />
+           </div>
         </div>
     )
 }
