@@ -12,6 +12,7 @@ import { fetchPopularPostAsync, getPopularPost, getStatus } from '@/store/slice/
 const MenuPosts = ({ withImage }) => {
     const dispatch = useDispatch()
     const popularPosts = useSelector(getPopularPost);
+    console.log("aman=> ", popularPosts)
     let status = useSelector(getStatus)
 
     useEffect(() => {

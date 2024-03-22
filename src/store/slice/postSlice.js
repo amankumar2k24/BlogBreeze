@@ -112,7 +112,7 @@ export const fetchPostAsync = createAsyncThunk("post/fetchPost", async (id) => {
 export const fetchPopularPostAsync = createAsyncThunk("post/fetchPopularPost", async () => {
     try {
         const response = await axios.get(`${BASE_API_URL}/api/popular-post`);
-        // console.log("response coming from fetchPopularPostAsync=> ", response)
+        console.log("response coming from fetchPopularPostAsync=> ", response)
         return response?.data?.result
     } catch (err) {
         console.log("err coming from fetchPopularPost =>", err)
