@@ -9,6 +9,7 @@ import { getStatus } from '@/store/slice/postSlice'
 import SkeletonLoading from '../skeleton_Loader/SkeletonLoader'
 
 const CardList = ({ category }) => {
+    console.log("CardList category=>", category)
     const page = useSelector(getPage)
     const pageSize = useSelector(getPageSize)
     const status = useSelector(getStatus)
@@ -19,12 +20,8 @@ const CardList = ({ category }) => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        let pagination = {
-            page: page,
-            pageSize: pageSize
-        }
-        dispatch(fetchPostsAsync(pagination, category))
-    }, [dispatch, category, page, pageSize])
+        dispatch(fetchPostsAsync({ category }))
+    }, [dispatch, category])
 
     return (
         <div className={styles.container}>

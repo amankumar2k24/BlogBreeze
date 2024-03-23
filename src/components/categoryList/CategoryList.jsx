@@ -11,19 +11,17 @@ import { useDispatch, useSelector } from 'react-redux'
 
 
 const CategoryList = () => {
+    let dispatch = useDispatch()
     let page = useSelector(getPage)
     let pageSize = useSelector(getPageSize)
-    let dispatch = useDispatch()
     const [search, setSearch] = useState("")
 
     const filterCategory = (category) => {
-        let pagination = { page: page, pageSize: pageSize, }
-        dispatch(fetchPostsAsync({ pagination, category }))
+        dispatch(fetchPostsAsync({ category }))
     }
 
     const searchPosts = () => {
-        let pagination = { page: 1, pageSize: pageSize, }
-        dispatch(fetchPostsAsync({ pagination, search }))
+        dispatch(fetchPostsAsync({ search }))
     }
 
     const allPost = () => {
@@ -40,9 +38,9 @@ const CategoryList = () => {
                 {category.map((item, index) => {
                     return (
                         <div key={index} className={styles.category} style={{ backgroundColor: item.bg }}
-                            onClick={() => filterCategory(item.name)}
+                            onClick={() => filterCategory(item?.name)}
                         >
-                            <Image className={styles.img} width={15} height={15} src={item.img} alt="img" />
+                            <Image className={styles.img} width={30} height={15} src={item.img} alt="img" />
                             <p>{item.name}</p>
                         </div>
                     )
@@ -55,7 +53,7 @@ const CategoryList = () => {
                     All
                 </button>
                 <input value={search} placeholder='search' className={styles.search_input} type='text'
-                    onChange={(e) => { setSearch(e.target.value) }}
+                    onChange={(e) => setSearch(e.target.value)}
                 />
                 <MdSearch onClick={searchPosts} className={styles.searchIcon} size={25} />
             </div>

@@ -12,7 +12,7 @@ import { fetchPopularPostAsync, getPopularPost, getStatus } from '@/store/slice/
 const MenuPosts = ({ withImage }) => {
     const dispatch = useDispatch()
     const popularPosts = useSelector(getPopularPost);
-    console.log("aman=> ", popularPosts)
+    // console.log("aman=> ", popularPosts)
     let status = useSelector(getStatus)
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const MenuPosts = ({ withImage }) => {
 
                 {popularPosts?.length > 0 &&
                     status === "IDLE" && (
-                        popularPosts?.map((item, index) => {
+                        popularPosts?.slice(0, 5).map((item, index) => {
 
                             const backgroundColors = ["#789cff", "#775aec", "#ff7887", "#7fb881", "#ffb14f"]
                             return (

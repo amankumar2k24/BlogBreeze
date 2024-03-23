@@ -49,9 +49,11 @@ export async function POST(req, res) {
 export async function GET(req, res) {
     try {
         const { searchParams } = new URL(req.url);
+        console.log("searchParam", searchParams)
         const page = parseInt(searchParams.get("page")) || 1;
         const pageSize = parseInt(searchParams.get("pagesize")) || 10;
         const category = searchParams.get("category");
+        console.log("category from post api", category)
         const search = searchParams.get("search");
 
         await connectDB();
@@ -70,16 +72,18 @@ export async function GET(req, res) {
 
         // Count total posts
         const totalPosts = await BlogModel.countDocuments(queryConditions);
+        // console.log("totalPosts", totalPosts)
 
         // Fetch posts with pagination
         const posts = await BlogModel.find(queryConditions)
             .sort({ _id: -1 }) // Sort by _id in descending order
             .skip((page - 1) * pageSize)
             .limit(pageSize);
+        // console.log("posts=>", posts)
 
         return NextResponse.json({ message: "Posts retrieved successfully", result: { posts, totalPosts } }, { status: 200 });
     } catch (err) {
-        // console.log(err);
+        console.log(err);
         return NextResponse.json({ message: "Something went wrong!" }, { status: 500 });
     }
 }
