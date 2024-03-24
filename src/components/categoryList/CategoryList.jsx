@@ -40,7 +40,7 @@ const CategoryList = () => {
                         <div key={index} className={styles.category} style={{ backgroundColor: item.bg }}
                             onClick={() => filterCategory(item?.name)}
                         >
-                            <Image className={styles.img} width={30} height={15} src={item.img} alt="img" />
+                            {/* <Image className={styles.img} width={30} height={15} src={item.img} alt="img" /> */}
                             <p>{item.name}</p>
                         </div>
                     )
