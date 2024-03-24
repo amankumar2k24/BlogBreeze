@@ -7,33 +7,23 @@ const Pagination = () => {
     const dispatch = useDispatch()
     let page = useSelector(getPage);
     let pageSize = useSelector(getPageSize);
-    let TotalPost = useSelector(getTotalPost);
-    // console.log(page, pageSize, TotalPost)
+    let totalPost = useSelector(getTotalPost);
+    console.log(page, pageSize, totalPost)
 
-    const prev = () => {
-        // console.log("clicked previous")
+    const handlePrev = () => {
+        console.log("clicked previous")
         if (page > 1) {
-            page = page - 1
-        } else {
-            page = page
+            dispatch(fetchPostsAsync({ pagination: { page: page - 1, pageSize } }));
         }
-        const pagination = { page: page, pageSize: pageSize }
-        // console.log("pagination coming from PREV Paginaiton Component", pagination)
-
-        dispatch(fetchPostsAsync({ pagination }))
     }
 
-    const next = () => {
-        // console.log("clicked next")
-        if (page < Math.ceil(TotalPost / pageSize)) {
-            page = page + 1
-        } else {
-            page = page
+    const handleNext = (e) => {
+        console.log("clicked in next button")
+        e.preventDefault()
+        const totalPages = Math.ceil(totalPost / pageSize);
+        if (page < totalPages) {
+            dispatch(fetchPostsAsync({ pagination: { page: page + 1, pageSize } }));
         }
-        const pagination = { page: page, pageSize: pageSize }
-        // console.log("pagination coming from NEXT Paginaiton Component", pagination)
-
-        dispatch(fetchPostsAsync({ pagination }))
     }
 
 
@@ -42,13 +32,13 @@ const Pagination = () => {
     return (
         <div className={styles.container}>
             <button className={styles.button}
-                onClick={prev}
+                onClick={handlePrev}
             >
                 Previous
             </button>
             <button className={styles.button}
-                onClick={next}
-                disabled={page === Math.ceil(TotalPost / pageSize)}
+                onClick={handleNext}
+            // disabled={page === Math.ceil(totalPost / pageSize)}
             >
                 Next
             </button>
