@@ -1,5 +1,12 @@
 .container {}
 
+.container>input {
+    font-size: 50px;
+    height: 100px;
+    width: 80%;
+    padding: 30px 10px;
+}
+
 .editor {
     display: flex;
     gap: 20px;
@@ -31,7 +38,17 @@
 }
 
 .select {
-    margin: 10px 0;
+    width: 20%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.select option {
+    font-size: 1rem;
 }
 
 .input {
@@ -39,6 +56,7 @@
     font-size: 64px;
     border: none;
     outline: none;
+    color: #9cb42d;
     background-color: transparent;
 }
 
@@ -48,8 +66,8 @@
 
 .publish {
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 80px;
+    right: 70px;
     padding: 10px 20px;
     border: none;
     background-color: #1a8917;
@@ -66,4 +84,32 @@ button>.image {
 
 .textArea {
     width: 100%;
+}
+
+
+@media (max-width : 1280px) {
+    .select {
+        margin-bottom: 10px;
+    }
+
+    .container>input {
+        font-size: 40px;
+        height: 100px;
+    }
+}
+
+@media (max-width : 640px) {
+    .publish {
+        right: 20px;
+    }
+
+    .select {
+        width: 50%;
+    }
+
+    .container>input {
+        font-size: 20px;
+        height: 20px;
+        width: 90%;
+    }
 }

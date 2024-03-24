@@ -1,11 +1,15 @@
-import React from 'react'
+"use client"
+import React, { useContext } from 'react'
 import styles from "./navbar.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
 import ThemeToggle from '../themeToggle/ThemeToggle'
 import AuthLinks from '../authLinks/AuthLinks'
+import { ThemeContext } from '@/context/ThemeContext'
 
 const Navbar = () => {
+    const { theme } = useContext(ThemeContext)
+
     return (
         <div className={styles.container}>
             <div className={styles.social}>
@@ -17,7 +21,17 @@ const Navbar = () => {
 
             <div className={styles.logoContainer}>
                 <Link className={styles.logo} href="/">
-                    <Image alt='blogBreeze' width={190} height={60} src="/blogBreeze.png" />
+                    {theme === "dark" ?
+                        <>
+                            <Image alt='blogBreeze' width={190} height={60} src="/blogBreezeLight.png" className={styles.logo1} />
+                            <Image alt='blogBreeze' width={60} height={50} title='Blog Breeze' src="/blogIcon.png" className={styles.logo2} />
+                        </>
+                        :
+                        <>
+                            <Image alt='blogBreeze' width={190} height={60} src="/blogBreezeDark.png" className={styles.logo1} />
+                            <Image alt='blogBreeze' width={60} height={50} title='Blog Breeze' src="/blogIcon.png" className={styles.logo2} />
+                        </>
+                    }
                 </Link>
             </div>
 

@@ -6,7 +6,7 @@ const Featured = () => {
     return (
         <div className={styles.container}>
             <div className={styles.title}>
-                <h2 >Hey welcome to codewar  !</h2>
+                <h2 >Hey welcome to Blog Breeze !</h2>
                 <p>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
@@ -14,7 +14,7 @@ const Featured = () => {
 
             <div className={styles.main}>
                 <div className={styles.image}>
-                    <Image alt="img" className={styles.img} width={400} height={300} layout="responsive" src="/coding.png" priority />
+                    <Image alt="img" className={styles.img} width={400} height={300} src="/coding.png" priority />
                 </div>
                 <div className={styles.content}>
                     <h2 className={styles.heading}>

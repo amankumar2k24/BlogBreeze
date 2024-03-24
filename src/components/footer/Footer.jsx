@@ -1,14 +1,22 @@
-import React from 'react'
+'use client'
+import React, { useContext } from 'react'
 import styles from "./footer.module.css"
 import Image from 'next/image'
 import Link from 'next/link'
+import { ThemeContext } from '@/context/ThemeContext'
 
 const Footer = () => {
+    const { theme } = useContext(ThemeContext)
+
     return (
         <div className={styles.container}>
             <div className={styles.info}>
                 <div className={styles.logo}>
-                    <Image alt='blogBreeze' width={190} height={60} src="/blogBreeze.png" />
+                    {theme === "dark" ?
+                        <Image alt='blogBreeze' width={190} height={60} src="/blogBreezeLight.png" />
+                        :
+                        <Image alt='blogBreeze' width={190} height={60} src="/blogBreezeDark.png" />
+                    }
                 </div>
                 <p className={styles.desc}>
                     Different purposes, they both involve managing state and performing actions based on certain conditions or events. Understanding how to use hooks effectively in React able skills for building interactive and data-driven applications.

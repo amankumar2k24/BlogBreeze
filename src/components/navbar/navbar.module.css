@@ -25,6 +25,14 @@
      font-weight: bold;
  }
 
+ .logo1 {
+     display: block;
+ }
+
+ .logo2 {
+     display: none;
+ }
+
  .links {
      display: flex;
      align-items: center;
@@ -71,4 +79,12 @@
      }
  }
 
- @media (max-width : 640px) {}
+ @media (max-width : 480px) {
+     .logo1 {
+         display: none;
+     }
+
+     .logo2 {
+         display: block;
+     }
+ }
