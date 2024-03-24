@@ -9,8 +9,8 @@ const LoginPage = () => {
     const { data, status } = useSession()
     const router = useRouter()
 
-    // console.log("data", data)
-    // console.log("status", status)
+    console.log("data", data)
+    console.log("status", status)
 
     useEffect(() => {
         if (status === "authenticated") {

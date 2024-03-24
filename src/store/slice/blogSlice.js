@@ -43,9 +43,9 @@ export const PostBlogData = createAsyncThunk("blog/PostBlogData", async ({ formD
         }
 
     } catch (error) {
-        // console.log("err coming from blogSlice", error)
+        setLoading(false)
+        console.log("err coming from blogSlice", error)
         toast.error("blog failed to publish");
-        return rejectWithValue(error);
     }
 
 })

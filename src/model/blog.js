@@ -9,8 +9,9 @@ const blogSchema = mongoose.Schema({
     story: { type: String, require: true },
     comment: { type: [Schema.Types.Mixed] },
     image: { type: String }
-
-}, { timestamps: true })
+},
+    { timestamps: true }
+)
 
 // export const Blog = mongoose.model("Blog", blogSchema)
 // export const Blog = mongoose.models.Blog || mongoose.model("Blog", blogSchema);

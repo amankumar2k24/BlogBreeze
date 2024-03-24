@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { PostBlogData, getStatus } from '@/store/slice/blogSlice';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import { SyncLoader } from 'react-spinners';
 
 export default function Page() {
