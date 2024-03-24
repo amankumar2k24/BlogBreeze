@@ -19,36 +19,52 @@ const Footer = () => {
                     }
                 </div>
                 <p className={styles.desc}>
-                    Different purposes, they both involve managing state and performing actions based on certain conditions or events. Understanding how to use hooks effectively in React able skills for building interactive and data-driven applications.
+                    Blog Breeze: Explore, Learn, and Inspire.
+                    Blog is a refreshing breeze in the world of online content, inviting readers to explore, learn, and be inspired by the articles and posts you share. Feel free to adjust it to better fit the tone and focus of your blog.
                 </p>
                 <div className={styles.icons}>
-                    <Image src="/facebook.png" alt='facebook' width={18} height={18} />
-                    <Image src="/instagram.png" alt='instagram' width={18} height={18} />
-                    <Image src="/github.png" alt='github' width={18} height={18} />
-                    <Image src="/linkedin.png" alt='linkedin' width={18} height={18} />
+                    <a href='https://www.facebook.com/aman.cool2k18/' target='_blank'>
+                        <Image src="/facebook.png" alt='facebook' width={24} height={24} />
+                    </a>
+                    <a href='https://www.instagram.com/aman.kumar2k15/' target='_blank' >
+                        <Image src="/instagram.png" alt='instagram' width={24} height={24} />
+                    </a>
+                    <a href='https://github.com/amankumar2k15' target='_blank'>
+                        <Image src="/github.png" alt='github' width={24} height={24} />
+                    </a>
+                    <a href='https://www.linkedin.com/in/amankumar1in/' target='_blank'>
+                        <Image src="/linkedin.png" alt='linkedin' width={24} height={24} />
+                    </a>
                 </div>
             </div>
             <div className={styles.links}>
                 <div className={styles.list}>
                     <span className={styles.listTitle}>Links</span>
-                    <Link href="/">Homepage</Link>
+                    <Link href="/">Home</Link>
                     <Link href="/">Blog</Link>
                     <Link href="/">About</Link>
-                    <Link href="/">Contact</Link>
                 </div>
                 <div className={styles.list}>
                     <span className={styles.listTitle}>Tags</span>
-                    <Link href="/">Style</Link>
-                    <Link href="/">Fashion</Link>
-                    <Link href="/">Coding</Link>
-                    <Link href="/">Travel</Link>
+                    <Link href="/blog?cat=style">Style</Link>
+                    <Link href="/blog?cat=fashion">Fashion</Link>
+                    <Link href="/blog?cat=coding">Coding</Link>
+                    <Link href="/blog?cat=travel">Travel</Link>
                 </div>
                 <div className={styles.list}>
                     <span className={styles.listTitle}>Social</span>
-                    <Link href="/">Facebook</Link>
-                    <Link href="/">Instagram</Link>
-                    <Link href="/">Github</Link>
-                    <Link href="/">Linkedin</Link>
+                    <a href='https://www.facebook.com/aman.cool2k18/' target='_blank'>
+                        <Link href="/">Facebook</Link>
+                    </a>
+                    <a href='https://www.instagram.com/aman.kumar2k15/' target='_blank'>
+                        <Link href="/">Instagram</Link>
+                    </a>
+                    <a href='https://github.com/amankumar2k15' target='_blank'>
+                        <Link href="/">Github</Link>
+                    </a>
+                    <a href='https://www.linkedin.com/in/amankumar1in/' target='_blank'>
+                        <Link href="/">Linkedin</Link>
+                    </a>
                 </div>
             </div>
         </div>

@@ -29,10 +29,18 @@ const Navbar = () => {
             </div>
 
             <div className={styles.social}>
-                <Image src="/facebook.png" alt='facebook' width={24} height={24} />
-                <Image src="/instagram.png" alt='instagram' width={24} height={24} />
-                <Image src="/github.png" alt='github' width={24} height={24} />
-                <Image src="/linkedin.png" alt='linkedin' width={24} height={24} />
+                <a href='/https://www.facebook.com/aman.cool2k18/' target='_blank'>
+                    <Image src="/facebook.png" alt='facebook' width={24} height={24} />
+                </a>
+                <a href='https://www.instagram.com/aman.kumar2k15/' target='_blank' >
+                    <Image src="/instagram.png" alt='instagram' width={24} height={24} />
+                </a>
+                <a href='https://github.com/amankumar2k15' target='_blank'>
+                    <Image src="/github.png" alt='github' width={24} height={24} />
+                </a>
+                <a href='https://www.linkedin.com/in/amankumar1in/' target='_blank'>
+                    <Image src="/linkedin.png" alt='linkedin' width={24} height={24} />
+                </a>
             </div>
 
 
@@ -40,7 +48,6 @@ const Navbar = () => {
             <div className={styles.links}>
                 <ThemeToggle />
                 <Link href="/" className={styles.link}>Home</Link>
-                <Link href="/" className={styles.link}>Contact</Link>
                 <Link href="/" className={styles.link}>About</Link>
                 <AuthLinks />
             </div>

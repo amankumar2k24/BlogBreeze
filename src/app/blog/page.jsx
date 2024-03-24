@@ -9,7 +9,7 @@ import { useSearchParams } from "next/navigation"
 const BlogPage = () => {
     const searchParams = useSearchParams()
     const category = searchParams.get("cat")
-    console.log("category coming from BlogPage", category)
+    // console.log("category coming from BlogPage", category)
 
     return (
         <div className={styles.container}>

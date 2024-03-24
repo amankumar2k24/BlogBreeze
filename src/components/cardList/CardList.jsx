@@ -9,9 +9,6 @@ import { getStatus } from '@/store/slice/postSlice'
 import SkeletonLoading from '../skeleton_Loader/SkeletonLoader'
 
 const CardList = ({ category }) => {
-    console.log("CardList category=>", category)
-    const page = useSelector(getPage)
-    const pageSize = useSelector(getPageSize)
     const status = useSelector(getStatus)
     const posts = useSelector(getPost)
     // console.log("postss=>", posts)
@@ -26,8 +23,6 @@ const CardList = ({ category }) => {
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Recent Posts</h1>
-            {/* <div className={styles.posts}>
-            </div> */}
             {(posts?.length > 0 && status === "IDLE") &&
                 posts?.map((post) => {
                     return <Card key={post?._id} post={post} />

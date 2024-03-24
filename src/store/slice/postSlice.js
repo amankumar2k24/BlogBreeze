@@ -24,7 +24,7 @@ const postSlice = createSlice({
             .addCase(fetchPostsAsync.fulfilled, (state, action) => {
                 state.status = "IDLE";
                 state.posts = action.payload.posts;
-                console.log("action.payload=>", action.payload)
+                // console.log("action.payload=>", action.payload)
                 state.totalPosts = action.payload.totalPosts
                 // if ((state.page * state.totalPosts) < state.totalPosts) {
                 //     state.page = state.page + 1
@@ -83,18 +83,18 @@ export const fetchPostsAsync = createAsyncThunk("post/fetchPosts", async ({ pagi
         queryString += `${key}=${pagination[key]}`
     }
     if (category) {
-        console.log("postSlice Category", category)
+        // console.log("postSlice Category", category)
         queryString += `category=${category}`
     }
     if (search) {
         queryString += `search=${search}`
     }
 
-    console.log("queryString", queryString)
+    // console.log("queryString", queryString)
 
     try {
         const res = await axios.get(`${BASE_API_URL}/api/posts?${queryString}`);
-        console.log("res fetchPosts Async=>", res)
+        // console.log("res fetchPosts Async=>", res)
         return res.data.result;
     } catch (err) {
         console.log("error from fetchPosts", err)
@@ -117,7 +117,7 @@ export const fetchPostAsync = createAsyncThunk("post/fetchPost", async (id) => {
 export const fetchPopularPostAsync = createAsyncThunk("post/fetchPopularPost", async () => {
     try {
         const response = await axios.get(`${BASE_API_URL}/api/popular-post`);
-        console.log("response coming from fetchPopularPostAsync=> ", response)
+        // console.log("response coming from fetchPopularPostAsync=> ", response)
         return response?.data?.result
     } catch (err) {
         console.log("err coming from fetchPopularPost =>", err)

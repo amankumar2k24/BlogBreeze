@@ -8,17 +8,17 @@ const Pagination = () => {
     let page = useSelector(getPage);
     let pageSize = useSelector(getPageSize);
     let totalPost = useSelector(getTotalPost);
-    console.log(page, pageSize, totalPost)
+    // console.log(page, pageSize, totalPost)
 
     const handlePrev = () => {
-        console.log("clicked previous")
+        // console.log("clicked previous")
         if (page > 1) {
             dispatch(fetchPostsAsync({ pagination: { page: page - 1, pageSize } }));
         }
     }
 
     const handleNext = (e) => {
-        console.log("clicked in next button")
+        // console.log("clicked in next button")
         e.preventDefault()
         const totalPages = Math.ceil(totalPost / pageSize);
         if (page < totalPages) {

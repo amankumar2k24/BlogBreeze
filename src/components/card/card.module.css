@@ -64,11 +64,12 @@
     .imageContainer {
         position: relative;
         flex-basis: 400px;
+        margin: 20px 0;
     }
 
-    /* .imageContainer {
-        display: none;
-    } */
+    .image {
+        width: auto;
+    }
 }
 
 @media (max-width : 480px) {

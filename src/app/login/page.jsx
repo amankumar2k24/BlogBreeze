@@ -9,8 +9,8 @@ const LoginPage = () => {
     const { data, status } = useSession()
     const router = useRouter()
 
-    console.log("data", data)
-    console.log("status", status)
+    // console.log("data", data)
+    // console.log("status", status)
 
     useEffect(() => {
         if (status === "authenticated") {
@@ -30,7 +30,9 @@ const LoginPage = () => {
                 >
                     Sign in with Google
                 </div>
-                <div className={styles.socialButton}>
+                <div className={styles.socialButton}
+                    onClick={() => signIn()}
+                >
                     Sign in with Github
                 </div>
             </div>
