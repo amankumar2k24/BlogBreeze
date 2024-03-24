@@ -8,8 +8,7 @@ const Footer = () => {
         <div className={styles.container}>
             <div className={styles.info}>
                 <div className={styles.logo}>
-                    <Image src="/logo.png" alt='aman blog' width={50} height={50} />
-                    <h2 className={styles.logoText}>Blogify</h2>
+                    <Image alt='blogBreeze' width={190} height={60} src="/blogBreeze.png" />
                 </div>
                 <p className={styles.desc}>
                     Different purposes, they both involve managing state and performing actions based on certain conditions or events. Understanding how to use hooks effectively in React able skills for building interactive and data-driven applications.
