@@ -29,7 +29,7 @@ const CardList = ({ category }) => {
                 })
             }
 
-            {posts?.length > 7 && status === "IDLE" && <Pagination />}
+            {posts?.length > 1 && status === "IDLE" && <Pagination />}
             {(posts?.length < 1 && status === "IDLE" &&
                 <p>No Posts found</p>
             )}
