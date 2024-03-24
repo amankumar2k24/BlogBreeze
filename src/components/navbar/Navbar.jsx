@@ -44,7 +44,6 @@ const Navbar = () => {
             </div>
 
 
-
             <div className={styles.links}>
                 <ThemeToggle />
                 <Link href="/" className={styles.link}>Home</Link>

@@ -39,9 +39,8 @@
      gap: 20px;
      flex: 1;
      font-size: 20px;
+     justify-content: end;
  }
-
-
 
  @media (max-width : 1200px) {
      .logo {
