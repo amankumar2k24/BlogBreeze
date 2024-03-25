@@ -16,8 +16,8 @@ const Featured = () => {
                 <div className={styles.image}>
                     <Image alt="img" className={styles.img} width={400} height={270} src="/homeLogo.webp" priority />
                 </div>
-                <div className={styles.content}>
-                    <h2 className={styles.heading}>
+                <div className={styles.content} >
+                    <h2 className={styles.heading} >
                         LET US HOLD TIGHTLY WITHOUT WAVERING TO THE HOPE WE AFFIRM, FOR GOD CAN BE TRUSTED TO KEEP HIS PROMISE.
                     </h2>
                     <div className={styles.btn}>Mistery Continuous with my journey</div>
