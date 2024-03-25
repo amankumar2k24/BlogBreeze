@@ -10,7 +10,7 @@ const Card = ({ post }) => {
             <div className={styles.imageContainer}>
                 <Image alt='imgg' className={styles.image}
                     fill
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "contain" }}
                     src={post?.image}
                 />
             </div>

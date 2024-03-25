@@ -51,13 +51,13 @@ const SinglePage = ({ params }) => {
                             </div>
                             <div className={styles.userTextContainer}>
                                 <span className={styles.username}>{blogPost?.username}</span>
-                                <span className={styles.date}>{new Date(blogPost?.createdAt).toDateString()}</span>
+                                <span className={styles.date}>{(new Date(blogPost?.createdAt).toDateString().split(" ").join("-"))}</span>
                             </div>
                         </div>
                     </div>
                     <div className={styles.imageContainer}>
                         {blogPost?.image && (
-                            <Image alt="img.." fill className={styles.image}
+                            <Image alt="img.." width={500} height={300} className={styles.image}
                                 src={blogPost?.image}
                             />
                         )}

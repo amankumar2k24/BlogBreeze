@@ -6,19 +6,15 @@
 
 .imageContainer {
     flex: 1;
-    height: 350px;
     position: relative;
 }
 
-.image {
-    object-fit: cover;
-}
 
 .textContainer {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 15px;
 }
 
 .date {
@@ -36,15 +32,16 @@
 }
 
 .desc {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     color: var(--softTextColor);
 }
 
 .link {
     width: max-content;
-    padding: 5px 10px;
+    padding: 10px 15px;
     border-radius: 5px;
+    font-size: 12px;
     transition: all 0.3s ease-in-out;
     color: white;
     background-color: black;
@@ -57,7 +54,26 @@
 }
 
 @media (max-width : 1280px) {
-    .imageContainer {
-        display: none;
+    .container {
+        flex-direction: column;
+        gap: 0px;
+        margin-bottom: 50px;
+        border-top: 2px solid rgb(232, 224, 224);
     }
+
+    .imageContainer {
+        position: relative;
+        flex-basis: 400px;
+    }
+
+    /* .imageContainer {
+        display: none;
+    } */
+}
+
+@media (max-width : 480px) {
+    .imageContainer {
+        flex-basis: 200px;
+    }
+
 }
