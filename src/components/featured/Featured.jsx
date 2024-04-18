@@ -14,7 +14,7 @@ const Featured = () => {
 
             <div className={styles.main}>
                 <div className={styles.image}>
-                    <Image alt="img" className={styles.img} width={400} height={270} src="/homeLogo.webp" priority />
+                    <Image alt="img" className={styles.img} width={400} height={270} src="/homeLogo.webp"  />
                 </div>
                 <div className={styles.content} >
                     <h2 className={styles.heading} >

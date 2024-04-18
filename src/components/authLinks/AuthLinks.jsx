@@ -43,7 +43,6 @@ const AuthLinks = () => {
             {open &&
                 <div className={styles.responsiveMenu}>
                     <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-                    <Link href="/" onClick={() => setOpen(false)}>About</Link>
                     {status === "unauthenticated" ?
                         (
                             <Link href="/login" onClick={() => setOpen(false)}>Login</Link>

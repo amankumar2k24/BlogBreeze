@@ -56,10 +56,9 @@
 @media screen and (max-width: 768px) {
 
 
-    .image {
-        /* width: 500px; */
-        margin: auto;
-
+    .img {
+        width: 340px;
+        height: 200px;
     }
 
     .title h1 {
@@ -77,6 +76,11 @@
 }
 
 @media screen and (max-width: 462px) {
+
+    .img {
+        width: 280px;
+        height: 180px;
+    }
 
     .imageContainer {
         flex-basis: 200px;
